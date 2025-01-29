@@ -1,9 +1,10 @@
 import { BsPhone, BsPerson, BsTrash } from 'react-icons/bs';
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from '../../redux/contactsOps';
 import { useDispatch } from "react-redux";
+import PropTypes from 'prop-types';
 import s from './Contact.module.css';
 
-const Contact = ({ name, number, id }) => {
+const Contact = ({ contact: { id, name, number } }) => {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
 
@@ -26,5 +27,12 @@ const Contact = ({ name, number, id }) => {
     </div>
   );
 };
+
+Contact.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  number: PropTypes.string,
+};
+
 
 export default Contact;

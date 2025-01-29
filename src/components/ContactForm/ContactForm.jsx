@@ -5,8 +5,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { BsPhone, BsPerson, BsPersonAdd } from 'react-icons/bs';
 import s from './ContactForm.module.css';
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
-
+import { addContact } from '../../redux/contactsOps';
 
 const initialValues = {
   id: '',
